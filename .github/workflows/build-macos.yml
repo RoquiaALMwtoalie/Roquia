@@ -28,7 +28,7 @@ jobs:
         run: npm run dist
 
       - name: Upload macOS build
-        uses: actions/upload-artifact@v2   # تم تحديث الإصدار إلى v2
+        uses: actions/upload-artifact@v4  # تم تحديث الإجراء إلى الإصدار v4
         with:
           name: macOS-build
           path: dist/mac/
