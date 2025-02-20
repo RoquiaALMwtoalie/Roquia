@@ -21,17 +21,18 @@ jobs:
         with:
           node-version: 18
 
-      - name: Navigate to Inventory directory
-        run: cd Inventory
-
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd Inventory
+          npm install
 
       - name: Build macOS app
-        run: npm run dist
+        run: |
+          cd Inventory
+          npm run dist
 
       - name: Upload macOS build
         uses: actions/upload-artifact@v4
         with:
           name: macOS-build
-          path: dist/mac/
+          path: Inventory/dist/mac/
